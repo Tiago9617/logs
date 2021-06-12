@@ -1,6 +1,6 @@
 import csv
 entrada = 'entrada.log'
-salida = "salida1.log"
+salida = "salida.log"
 archivo = open(entrada, 'r')
 lineas = csv.reader(archivo)
 salida1 = open(salida, 'w')
@@ -24,7 +24,7 @@ def run():
         posicion = str(logs[numero]).find(opcion.upper())##obtengo la posicion donde se encuentran uno de los logs que el usuario quiere escribir
         
         if opcion.upper() in cadena[posicion:posicion+len(opcion.upper())]:## pregunto si el dato ingresado se encuentra en la cadena
-            salida1.write(cadena.strip("[]''"" "))##escribo el log en el archivo
+            salida1.write(cadena.strip("[""]''"))##escribo el log en el archivo
             salida1.write("\n")##salto de linea
     print(f"{opcion} {entrada} {salida}")
     archivo.close()
